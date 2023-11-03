@@ -1,35 +1,51 @@
-#posts-index img {
-  width: 300px;
-}
-
+/* entire web page formatting */
 html {
   scroll-behavior: smooth;
+  background-image: linear-gradient(to bottom right,rgb(139, 212, 255), rgb(77, 255, 77));
 }
+/* posts-new section */
 #posts-new {
   padding-top: 5em;
 }
 
-#posts-index {
-  padding-top: 5em;
+label {
+  padding-right: 20px;
+  text-align: start;
 }
 
 input {
   border-radius: 10px;
   margin:10px 0;
 }
+
 #title {
   padding: 5px 30px;
 }
 
-#content {
-  padding: 20px 30px;
-  margin-right: 10px;
+button {
+  background-color: white;
+  
+}
+/* posts index section */
+#posts-index {
+  padding-top: 5em;
 }
 
-p {
-  width: 800px;
-  margin: auto;
+#posts-index img {
+  width: 300px;
+  border-radius: 30px;
 }
+
+#posts-index p, h2 {
+  text-align: left;
+  margin-left: 250px;
+  padding-bottom: 30px;
+}
+
+h2 {
+  padding-bottom: 10px;
+}
+/* footer section */
 footer {
-  padding-top: 40px;
+  padding-top: 80px;
 }
