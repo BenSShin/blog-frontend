@@ -1,31 +1,54 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <header>
+        <a href="#">Home</a> | <a href="#posts-index">All posts</a> | <a href="#posts-new">New post</a>
+      </header>
+
+      <div id="posts-new">
+        <h1>New post</h1>
+        {/* new blog post */}
+        <div>
+          Title: <input type="text" />
+        </div>
+        <div>
+          Content: <input type="text" />
+        </div>
+        <div>
+          Image: <input type="text" />
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
       </div>
-      <h1>CODE</h1>
-      <p>editing some stuff</p>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div id="posts-index">
+        <h1>All posts</h1>
+        {/* first post */}
+        <div className="posts">
+          <h2>Post 1</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis explicabo, consectetur nobis dolore,
+            quo, doloribus nam amet perferendis veritatis expedita voluptates. Cumque et itaque ea quidem nihil
+            recusandae, soluta officiis?
+          </p>
+        </div>
+        <div className="posts">
+          <h2>Post 2</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sunt maxime necessitatibus ratione ducimus
+            commodi deleniti aliquam dolorum esse error similique, quidem sed asperiores distinctio voluptas eius
+            repudiandae. Nostrum, ipsa.
+          </p>
+        </div>
       </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
+
+      <footer>
+        <p>Copyright 20XX</p>
+      </footer>
+    </div>
   );
 }
 
