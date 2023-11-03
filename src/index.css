@@ -1,7 +1,20 @@
 /* entire web page formatting */
 html {
   scroll-behavior: smooth;
-  background-image: linear-gradient(to bottom right,rgb(139, 212, 255), rgb(77, 255, 77));
+  /* background-image: linear-gradient(to bottom right,rgb(139, 212, 255), rgb(77, 255, 77)); */
+}
+#root, body{
+  margin: auto;
+  padding: auto;
+}
+
+
+/* header section */
+header {
+  font-size: 4ch;
+  background-image: linear-gradient(to bottom right,rgb(139, 212, 255), rgb(188, 255, 188));
+  size: 50px auto;
+  border: 2px solid rgb(8, 3, 3);
 }
 /* posts-new section */
 #posts-new {
@@ -21,9 +34,17 @@ input {
 #title {
   padding: 5px 30px;
 }
-
-button {
-  background-color: white;
+/* button hover */
+#post-submit {
+  font-size: 120%;
+  padding: 10px 25px;
+  border-radius: 20px;
+  background-color: rgb(200, 255, 200);
+  transition-duration: .5s;
+}
+#post-submit:hover {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(128, 255, 128);
   
 }
 /* posts index section */

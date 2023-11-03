@@ -16,7 +16,9 @@ export function PostsNew() {
         <input type="text" id="image" />
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button id="post-submit" type="submit">
+          Submit
+        </button>
       </div>
     </div>
   );
