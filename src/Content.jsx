@@ -1,33 +1,38 @@
+import axios from "axios";
+import { useState } from "react";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
 
 export function Content() {
-  let posts = [
-    {
-      id: 1,
-      title: "Post 1",
-      body: "place holder",
-      image: "https://clickfirstmarketing.com/wp-content/uploads/Purpose-of-Blogging.jpeg",
-    },
-    {
-      id: 2,
-      title: "Post 2",
-      body: "place holder",
-      image: "https://clickfirstmarketing.com/wp-content/uploads/Purpose-of-Blogging.jpeg",
-    },
-    {
-      id: 3,
-      title: "Post 3",
-      body: "place holder",
-      image: "https://clickfirstmarketing.com/wp-content/uploads/Purpose-of-Blogging.jpeg",
-    },
-  ];
+  // giving react variable and ability to set variable
+  const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
+
+  // a function to toggle modal show on
+  const handleShowPost = () => {
+    setIsPostsShowVisible(true);
+  };
+
+  // a function to toggle modal show off
+  const handleClose = () => {
+    setIsPostsShowVisible(false);
+  };
+
+  const [posts, setposts] = useState([]);
+  // a function to show list of blogs using blog api
+  const handleIndexPosts = () => {
+    axios.get("http://localhost:3000/posts.json").then((response) => {
+      console.log(response.data);
+      setposts(response.data);
+    });
+  };
   return (
     <div>
       <PostsNew />
-      <PostsIndex posts={posts} />
-      <Modal show={true}>
+      <button onClick={handleIndexPosts}>Load Posts</button>
+      <PostsIndex posts={posts} onShowPost={handleShowPost} />
+      <Modal show={isPostsShowVisible} onClose={handleClose}>
+        {/* this is refered to as children */}
         <p>TEST</p>
       </Modal>
     </div>

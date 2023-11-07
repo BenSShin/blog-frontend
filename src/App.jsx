@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+/* import axios from axios */
+
 import "./App.css";
 import { Content } from "./Content";
 import { Footer } from "./Footer";
