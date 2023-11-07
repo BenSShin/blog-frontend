@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useEffect } from "react";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
@@ -26,10 +27,12 @@ export function Content() {
       setposts(response.data);
     });
   };
+  // allows the functino handleIndexPosts to occur when page is loaded
+  useEffect(handleIndexPosts, []);
+
   return (
     <div>
       <PostsNew />
-      <button onClick={handleIndexPosts}>Load Posts</button>
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         {/* this is refered to as children */}
