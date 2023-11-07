@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import "./Modal.css";
 
 export function Modal(props) {

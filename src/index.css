@@ -5,16 +5,24 @@ html {
 }
 #root, body{
   margin: auto;
-  padding: auto;
+  padding: 0;
 }
 
 
 /* header section */
 header {
   font-size: 4ch;
-  background-image: linear-gradient(to bottom right,rgb(139, 212, 255), rgb(188, 255, 188));
+  background-color: rgb(161, 161, 161);
   size: 50px auto;
-  border: 2px solid rgb(8, 3, 3);
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+header a {
+  text-decoration: none;
+  color: white;
+
 }
 /* posts-new section */
 #posts-new {
@@ -35,14 +43,14 @@ input {
   padding: 5px 30px;
 }
 /* button hover */
-#post-submit {
+button {
   font-size: 120%;
   padding: 10px 25px;
   border-radius: 20px;
   background-color: rgb(200, 255, 200);
   transition-duration: .5s;
 }
-#post-submit:hover {
+button:hover {
   background-color: rgb(255, 255, 255);
   border: 2px solid rgb(128, 255, 128);
   
