@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { PostsIndex } from "./PostsIndex";
 import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
+import { PostsShow } from "./PostShow";
 
 export function Content() {
   // giving react variable and ability to set variable
@@ -36,9 +37,7 @@ export function Content() {
       <PostsNew />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <h2>Title: {currentPost.title}</h2>
-        <p>Body: {currentPost.body}</p>
-        <p>Image: {currentPost.image}</p>
+        <PostsShow post={currentPost} />
       </Modal>
     </div>
   );

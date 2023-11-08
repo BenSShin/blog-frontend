@@ -63,12 +63,15 @@ button:hover {
 #posts-index img {
   width: 300px;
   border-radius: 30px;
+  margin-bottom: 80px;
 }
 
 #posts-index p, h2 {
-  text-align: left;
   margin: auto 200px;
   padding-bottom: 30px;
+}
+#posts-index button {
+  display: flex;
 }
 
 h2 {
