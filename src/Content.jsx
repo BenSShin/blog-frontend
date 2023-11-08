@@ -7,10 +7,13 @@ import { Modal } from "./Modal";
 export function Content() {
   // giving react variable and ability to set variable
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
+  const [posts, setposts] = useState([]);
+  const [currentPost, setCurrentPost] = useState({});
 
   // a function to toggle modal show on
-  const handleShowPost = () => {
+  const handleShowPost = (post) => {
     setIsPostsShowVisible(true);
+    setCurrentPost(post);
   };
 
   // a function to toggle modal show off
@@ -18,7 +21,6 @@ export function Content() {
     setIsPostsShowVisible(false);
   };
 
-  const [posts, setposts] = useState([]);
   // a function to show list of blogs using blog api
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then((response) => {
@@ -34,8 +36,9 @@ export function Content() {
       <PostsNew />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        {/* this is refered to as children */}
-        <p>TEST</p>
+        <h2>Title: {currentPost.title}</h2>
+        <p>Body: {currentPost.body}</p>
+        <p>Image: {currentPost.image}</p>
       </Modal>
     </div>
   );

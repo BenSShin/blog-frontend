@@ -11,13 +11,13 @@ html {
 
 /* header section */
 header {
+  padding: 100% auto;
   font-size: 4ch;
   background-color: rgb(161, 161, 161);
-  size: 50px auto;
   color: white;
-  width: 100%;
   position: fixed;
   top: 0;
+  width: 100%;
 }
 header a {
   text-decoration: none;
@@ -67,7 +67,7 @@ button:hover {
 
 #posts-index p, h2 {
   text-align: left;
-  margin-left: 250px;
+  margin: auto 200px;
   padding-bottom: 30px;
 }
 
