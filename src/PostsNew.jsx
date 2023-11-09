@@ -3,20 +3,41 @@ export function PostsNew() {
     <div id="posts-new">
       <h1>New post</h1>
       {/* new blog post */}
-      <div>
-        <label htmlFor="title">Title:</label>
-        <input type="text" id="title" />
+      <div className="input-group mb-3">
+        <span className="input-group-text" id="inputGroup-sizing-default">
+          Title:
+        </span>
+        <input
+          type="text"
+          className="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+        />
+      </div>
+      <div className="input-group mb-3">
+        <span className="input-group-text" id="inputGroup-sizing-default">
+          Body:
+        </span>
+        <input
+          type="text"
+          className="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+        />
+      </div>
+      <div className="input-group mb-3">
+        <span className="input-group-text" id="inputGroup-sizing-default">
+          Image:
+        </span>
+        <input
+          type="text"
+          className="form-control"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default"
+        />
       </div>
       <div>
-        <label htmlFor="body">Body:</label>
-        <input type="text" id="body" />
-      </div>
-      <div>
-        <label htmlFor="image">Image:</label>
-        <input type="text" id="image" />
-      </div>
-      <div>
-        <button id="post-submit" type="submit">
+        <button className="btn btn-dark" id="post-submit" type="submit">
           Submit
         </button>
       </div>
