@@ -12,7 +12,9 @@ export function PostsIndex(props) {
               <div className="card-body">
                 <h5 className="card-title">{post.title}</h5>
                 <p className="card-text">{post.body}</p>
-                <button>hi</button>
+                <button className="btn btn-secondary" onClick={() => props.onShowPost(post)}>
+                  More Info
+                </button>
               </div>
             </div>
           ))}
