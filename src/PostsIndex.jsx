@@ -2,23 +2,30 @@ export function PostsIndex(props) {
   console.log(props);
 
   return (
-    <div className="container p-4" id="posts-index">
+    <div className="mt-5" id="posts-index">
       <h1>All Posts</h1>
-      <div className="row row-cols-1 row-cols-md-1 g-4">
-        <div className="col-12 p-4">
-          {props.posts.map((post) => (
-            <div className="card" key={post.id}>
-              <img src={post.image} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">{post.title}</h5>
-                <p className="card-text">{post.body}</p>
-                <button className="btn btn-secondary" onClick={() => props.onShowPost(post)}>
-                  More Info
-                </button>
-              </div>
+      <div className="row row-cols-1 row-cols-md-2 g-4">
+        {props.posts.map((post) => (
+          <div key={post.id} className="card g-3">
+            <img src={post.image} className="card-img-top mt-2" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">{post.title}</h5>
+              <hr />
+              <p className="card-text">{post.body}</p>
             </div>
-          ))}
-        </div>
+            <div className="card-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+                onClick={() => props.onShowPost(post)}
+              >
+                More Info
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
     // <div id="posts-index">
