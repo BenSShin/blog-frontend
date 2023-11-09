@@ -6,23 +6,25 @@ export function PostsIndex(props) {
       <h1>All Posts</h1>
       <div className="row row-cols-1 row-cols-md-2 g-4">
         {props.posts.map((post) => (
-          <div key={post.id} className="card g-3">
-            <img src={post.image} className="card-img-top mt-2" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">{post.title}</h5>
-              <hr />
-              <p className="card-text">{post.body}</p>
-            </div>
-            <div className="card-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-toggle="modal"
-                data-bs-target="#staticBackdrop"
-                onClick={() => props.onShowPost(post)}
-              >
-                More Info
-              </button>
+          <div key={post.id} className="col g-3">
+            <div className="card h-100">
+              <img src={post.image} className="card-img-top mt-2" alt="..." />
+              <div className="card-body">
+                <h5 className="card-title">{post.title}</h5>
+                <hr />
+                <p className="card-text">{post.body}</p>
+              </div>
+              <div className="card-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                  onClick={() => props.onShowPost(post)}
+                >
+                  More Info
+                </button>
+              </div>
             </div>
           </div>
         ))}
