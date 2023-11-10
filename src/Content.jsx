@@ -8,7 +8,7 @@ import { PostsShow } from "./PostShow";
 export function Content() {
   // giving react variable and ability to set variable
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
-  const [posts, setposts] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [currentPost, setCurrentPost] = useState({});
 
   // a function to toggle modal show on
@@ -26,12 +26,35 @@ export function Content() {
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then((response) => {
       console.log(response.data);
-      setposts(response.data);
+      setPosts(response.data);
     });
   };
   const handleCreatePost = (params) => {
     axios.post("http://localhost:3000/posts.json", params).then((response) => {
-      setposts([...posts, response.data]);
+      setPosts([...posts, response.data]);
+    });
+  };
+
+  const handleUpdatePost = (id, params) => {
+    axios.patch(`http://localhost:3000/posts/${id}.json`, params).then((response) => {
+      setPosts(
+        posts.map((post) => {
+          if (post.id === response.data) {
+            return response.data;
+          } else {
+            return post;
+          }
+        })
+      );
+      setCurrentPost(response.data);
+    });
+  };
+
+  const handleDestroyPost = (post) => {
+    axios.delete(`http://localhost:3000/posts/${post.id}.json`).then((response) => {
+      setPosts(posts.filter((p) => p.id !== post.id));
+      console.log(response);
+      handleClose();
     });
   };
   // allows the functino handleIndexPosts to occur when page is loaded
@@ -42,7 +65,7 @@ export function Content() {
       <PostsNew onCreatePost={handleCreatePost} />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
-        <PostsShow post={currentPost} />
+        <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDestroyPost={handleDestroyPost} />
       </Modal>
     </div>
   );

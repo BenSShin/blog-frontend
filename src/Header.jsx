@@ -4,9 +4,9 @@ export function Header() {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Navbar
+            Home
           </a>
-          <a className="nav-link active" href="#posts-new">
+          <a className="nav-link active ma-4" href="#posts-new">
             New Post
           </a>
           <a className="nav-link active" href="#posts-index">
