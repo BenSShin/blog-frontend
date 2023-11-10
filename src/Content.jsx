@@ -29,12 +29,17 @@ export function Content() {
       setposts(response.data);
     });
   };
+  const handleCreatePost = (params) => {
+    axios.post("http://localhost:3000/posts.json", params).then((response) => {
+      setposts([...posts, response.data]);
+    });
+  };
   // allows the functino handleIndexPosts to occur when page is loaded
   useEffect(handleIndexPosts, []);
 
   return (
     <div className="container">
-      <PostsNew />
+      <PostsNew onCreatePost={handleCreatePost} />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} />

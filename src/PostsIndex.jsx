@@ -4,7 +4,7 @@ export function PostsIndex(props) {
   return (
     <div className="mt-5" id="posts-index">
       <h1>All Posts</h1>
-      <div className="row row-cols-1 row-cols-md-2 g-4">
+      <div className="row row-cols-1 row-cols-md-3 g-4">
         {props.posts.map((post) => (
           <div key={post.id} className="col g-3">
             <div className="card h-100">
