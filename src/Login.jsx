@@ -18,6 +18,7 @@ export function Login() {
 
   return (
     <div id="login">
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
           Email: <input name="email" type="email" />

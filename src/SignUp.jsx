@@ -18,6 +18,7 @@ export function SignUp() {
 
   return (
     <div id="signup">
+      <h1>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <div>
           Name: <input name="name" type="text" />
