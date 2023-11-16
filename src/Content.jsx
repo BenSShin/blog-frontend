@@ -5,6 +5,7 @@ import { PostsNew } from "./PostsNew";
 import { Modal } from "./Modal";
 import { PostsShow } from "./PostShow";
 import { SignUp } from "./SignUp";
+import { Login } from "./Login";
 
 export function Content() {
   // giving react variable and ability to set variable
@@ -63,6 +64,7 @@ export function Content() {
 
   return (
     <div className="container">
+      <Login />
       <SignUp />
       <PostsNew onCreatePost={handleCreatePost} />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
