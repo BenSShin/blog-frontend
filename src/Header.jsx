@@ -29,6 +29,11 @@ export function Header() {
                   Login
                 </Link>
               </div>
+              <div className="nav-link active">
+                <Link className="nav-link active" to="/logout">
+                  Logout
+                </Link>
+              </div>
             </div>
           </div>
           <Link className="nav-link active ma-4" to="/posts/new">
@@ -40,7 +45,7 @@ export function Header() {
           <div className="col-2"></div>
           <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn btn-outline-primary" type="submit">
               Search
             </button>
           </form>
