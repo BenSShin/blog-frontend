@@ -8,6 +8,7 @@ import { SignUp } from "./SignUp";
 import { Login } from "./Login";
 import { Logout } from "./Logout";
 import { Routes, Route } from "react-router-dom";
+import { Home } from "./Home";
 
 export function Content() {
   // giving react variable and ability to set variable
@@ -66,13 +67,14 @@ export function Content() {
 
   return (
     <div className="container">
-      <Login />
-      <Logout />
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/posts/new" element={<PostsNew onCreatePost={handleCreatePost} />} />
+        <Route path="/posts" element={<PostsIndex posts={posts} onShowPost={handleShowPost} />} />
       </Routes>
-      <PostsNew onCreatePost={handleCreatePost} />
-      <PostsIndex posts={posts} onShowPost={handleShowPost} />
+      <Logout />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDestroyPost={handleDestroyPost} />
       </Modal>

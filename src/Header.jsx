@@ -8,14 +8,34 @@ export function Header() {
           <Link className="navbar-brand" to="/">
             Home
           </Link>
-          <a className="nav-link active ma-4" href="#posts-new">
+          <div className="nav-item dropdown">
+            <a
+              className="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Account
+            </a>
+            <div className="dropdown-menu">
+              <div className="nav-link active">
+                <Link className="nav-link active" to="/signup">
+                  Sign Up
+                </Link>
+              </div>
+              <div className="nav-link active">
+                <Link className="nav-link active" to="/login">
+                  Login
+                </Link>
+              </div>
+            </div>
+          </div>
+          <Link className="nav-link active ma-4" to="/posts/new">
             New Post
-          </a>
-          <a className="nav-link active" href="#posts-index">
+          </Link>
+          <Link className="nav-link active" to="/posts">
             All Posts
-          </a>
-          <Link className="nav-link active" to="/signup">
-            Sign Up
           </Link>
           <div className="col-2"></div>
           <form className="d-flex" role="search">

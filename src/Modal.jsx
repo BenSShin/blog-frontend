@@ -3,7 +3,7 @@
 export function Modal(props) {
   if (props.show) {
     return (
-      <div className="modal fade" id="staticBackdrop" tabIndex="-1">
+      <div className="modal fade" id="staticBackdrop">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
