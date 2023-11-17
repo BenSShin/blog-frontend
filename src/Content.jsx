@@ -7,6 +7,7 @@ import { PostsShow } from "./PostShow";
 import { SignUp } from "./SignUp";
 import { Login } from "./Login";
 import { Logout } from "./Logout";
+import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   // giving react variable and ability to set variable
@@ -67,7 +68,9 @@ export function Content() {
     <div className="container">
       <Login />
       <Logout />
-      <SignUp />
+      <Routes>
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
       <PostsNew onCreatePost={handleCreatePost} />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
