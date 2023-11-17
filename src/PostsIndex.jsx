@@ -1,6 +1,7 @@
+// import { Link } from "react-router-dom";
+
 export function PostsIndex(props) {
   console.log(props);
-
   return (
     <div className="mt-5" id="posts-index">
       <h1>All Posts</h1>
@@ -12,7 +13,7 @@ export function PostsIndex(props) {
               <div className="card-body">
                 <h5 className="card-title">{post.title}</h5>
                 <hr />
-                <p className="card-text">{post.body}</p>
+                {/* <p className="card-text">{post.body}</p> */}
               </div>
               <div className="card-footer">
                 <button
@@ -24,6 +25,7 @@ export function PostsIndex(props) {
                 >
                   More Info
                 </button>
+                {/* <Link to="/posts/:id">test</Link> */}
               </div>
             </div>
           </div>

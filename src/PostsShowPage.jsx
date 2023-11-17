@@ -16,11 +16,11 @@ export function PostsShowPage() {
 
   return (
     <div id="posts-show">
+      <hr />
       <h1> Post Info</h1>
       <h2>{post.title}</h2>
-      <p>{post.chef}</p>
-      <p>{post.ingredients}</p>
-      <p>{post.directions}</p>
+      <img src={post.image} className="card-img-top mt-2 w-50" alt="..." />
+      <p>{post.body}</p>
     </div>
   );
 }
