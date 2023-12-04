@@ -15,14 +15,15 @@ export function Header() {
           <Link className="nav-link active" to="/posts">
             All Posts
           </Link>
+          <br />
           {localStorage.jwt === undefined ? (
             <>
-              <div className="nav-link active">
+              <div className="nav-link">
                 <Link className="nav-link active" to="/signup">
                   Sign Up
                 </Link>
               </div>
-              <div className="nav-link active">
+              <div className="nav-link">
                 <Link className="nav-link active" to="/login">
                   Login
                 </Link>
@@ -30,12 +31,11 @@ export function Header() {
             </>
           ) : (
             <>
-              <div className="nav-link active px-2">
+              <div className="nav-link px-5">
                 <Logout className="nav-link-active" />
               </div>
             </>
           )}
-          <div className="col-2"></div>
         </div>
       </nav>
     </header>
