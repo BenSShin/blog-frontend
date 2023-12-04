@@ -8,17 +8,14 @@ export function Header() {
           <Link className="navbar-brand" to="/">
             Home
           </Link>
-          <div className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Account
-            </a>
-            <div className="dropdown-menu">
+          <Link className="nav-link active ma-4" to="/posts/new">
+            New Post
+          </Link>
+          <Link className="nav-link active" to="/posts">
+            All Posts
+          </Link>
+          {localStorage.jwt === undefined ? (
+            <>
               <div className="nav-link active">
                 <Link className="nav-link active" to="/signup">
                   Sign Up
@@ -29,19 +26,16 @@ export function Header() {
                   Login
                 </Link>
               </div>
-              <div className="nav-link active">
+            </>
+          ) : (
+            <>
+              <div className="nav-link active px-2">
                 <Link className="nav-link active" to="/logout">
                   Logout
                 </Link>
               </div>
-            </div>
-          </div>
-          <Link className="nav-link active ma-4" to="/posts/new">
-            New Post
-          </Link>
-          <Link className="nav-link active" to="/posts">
-            All Posts
-          </Link>
+            </>
+          )}
           <div className="col-2"></div>
           <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -53,8 +47,4 @@ export function Header() {
       </nav>
     </header>
   );
-}
-
-{
-  /* <a href="#">Home</a> | <a href="#posts-index">All posts</a> | <a href="#posts-new">New post</a> */
 }
