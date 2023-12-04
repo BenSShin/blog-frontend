@@ -16,7 +16,15 @@ export function PostsIndex(props) {
           aria-label="Search"
           value={searchFilter}
           onChange={(event) => setSearchFilter(event.target.value)}
+          list="titles"
         />
+        <datalist id="titles">
+          {searchFilter === "" ? (
+            <option></option>
+          ) : (
+            props.posts.map((post) => <option key={post.id}>{post.title}</option>)
+          )}
+        </datalist>
         <button className="btn btn-outline-primary" type="submit">
           Search
         </button>
