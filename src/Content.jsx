@@ -6,7 +6,6 @@ import { Modal } from "./Modal";
 import { PostsShow } from "./PostShow";
 import { SignUp } from "./SignUp";
 import { Login } from "./Login";
-import { Logout } from "./Logout";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./Home";
 import { PostsShowPage } from "./PostsShowPage";
@@ -70,7 +69,6 @@ export function Content() {
     <div className="container">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/logout" element={<Logout />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/posts/new" element={<PostsNew onCreatePost={handleCreatePost} />} />

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Logout } from "./Logout";
 
 export function Header() {
   return (
@@ -30,19 +31,11 @@ export function Header() {
           ) : (
             <>
               <div className="nav-link active px-2">
-                <Link className="nav-link active" to="/logout">
-                  Logout
-                </Link>
+                <Logout className="nav-link-active" />
               </div>
             </>
           )}
           <div className="col-2"></div>
-          <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-primary" type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </nav>
     </header>
