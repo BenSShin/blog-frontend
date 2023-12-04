@@ -19,11 +19,7 @@ export function PostsIndex(props) {
           list="titles"
         />
         <datalist id="titles">
-          {searchFilter === "" ? (
-            <option></option>
-          ) : (
-            props.posts.map((post) => <option key={post.id}>{post.title}</option>)
-          )}
+          {searchFilter === "" ? null : props.posts.map((post) => <option key={post.id}>{post.title}</option>)}
         </datalist>
         <button className="btn btn-outline-primary" type="submit">
           Search
