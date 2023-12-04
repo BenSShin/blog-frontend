@@ -80,6 +80,7 @@ export function Content() {
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} onUpdatePost={handleUpdatePost} onDestroyPost={handleDestroyPost} />
       </Modal>
+      <Modal isPostsShowVisible onClose={handleClose}></Modal>
     </div>
   );
 }

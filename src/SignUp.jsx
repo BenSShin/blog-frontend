@@ -3,6 +3,8 @@ import { useState } from "react";
 
 export function SignUp() {
   const [errors, setErrors] = useState([]);
+  const [name, setName] = useState("");
+  const [status, setStatus] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,6 +18,7 @@ export function SignUp() {
         window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
       })
       .catch((error) => {
+        setStatus(error.response.status);
         console.log(error.response.data.errors);
         setErrors(error.response.data.errors);
       });
@@ -25,6 +28,8 @@ export function SignUp() {
     <div id="signup">
       <hr />
       <h1>Signup</h1>
+      {/* ternary syntax */}
+      {status ? <img src={`https://http.cat/${status}`} /> : null}
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
@@ -39,7 +44,10 @@ export function SignUp() {
             className="form-control"
             aria-label="Sizing example input"
             aria-describedby="inputGroup-sizing-default"
+            value={name}
+            onChange={(event) => setName(event.target.value.slice(0, 30))}
           />
+          <small>{30 - name.length} characters remaining</small>
         </div>
         <div>
           Email:{" "}
